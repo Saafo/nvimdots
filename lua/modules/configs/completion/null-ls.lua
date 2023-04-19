@@ -35,6 +35,7 @@ return function()
 				"markdown",
 			},
 		}),
+		btns.formatting.swiftformat,
 	}
 	require("modules.utils").load_plugin("null-ls", {
 		border = "rounded",

@@ -114,8 +114,10 @@ local load_core = function()
 	require("core.pack")
 	require("keymap")
 
-	vim.api.nvim_set_option_value("background", settings.background, {})
+	-- catppuccin may change background, so remember and set back after set colorscheme
+	local background = vim.o.background
 	vim.cmd.colorscheme(settings.colorscheme)
+	vim.o.background = background
 end
 
 load_core()
