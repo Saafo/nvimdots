@@ -90,4 +90,9 @@ return function()
 		local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
 		nvim_lsp.dartls.setup(final_opts)
 	end
+  -- since [mason do not support sourcekit yet](https://github.com/williamboman/mason.nvim/issues/208)
+  -- we have to manully import and configure sourcekit here.
+  if vim.fn.executable("sourcekit-lsp") then
+    require('lspconfig').sourcekit.setup{}
+  end
 end

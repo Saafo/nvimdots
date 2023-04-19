@@ -15,6 +15,10 @@ ui["catppuccin/nvim"] = {
 	name = "catppuccin",
 	config = require("ui.catppuccin"),
 }
+ui["vimpostor/vim-lumen"] = {
+    lazy = false,
+    name = "vim-lumen",
+}
 ui["sainnhe/edge"] = {
 	lazy = true,
 	config = require("ui.edge"),

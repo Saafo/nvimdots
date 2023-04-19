@@ -6,7 +6,7 @@ editor["rainbowhxch/accelerated-jk.nvim"] = {
 	config = require("editor.accelerated-jk"),
 }
 editor["rmagatti/auto-session"] = {
-	lazy = true,
+	lazy = false,
 	cmd = { "SaveSession", "RestoreSession", "DeleteSession" },
 	config = require("editor.auto-session"),
 }
@@ -67,6 +67,13 @@ editor["lambdalisue/suda.vim"] = {
 	cmd = { "SudaRead", "SudaWrite" },
 	config = require("editor.suda"),
 }
+editor["nmac427/guess-indent.nvim"] = {
+	lazy = true,
+	event = "BufReadPost",
+	config = function()
+		require("guess-indent").setup({})
+	end,
+}
 
 ----------------------------------------------------------------------
 --                  :treesitter related plugins                    --
@@ -82,6 +89,7 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 	config = require("editor.treesitter"),
 	dependencies = {
 		{ "nvim-treesitter/nvim-treesitter-textobjects" },
+		{ "nvim-treesitter/nvim-treesitter-context" },
 		{ "mrjones2014/nvim-ts-rainbow" },
 		{ "JoosepAlviste/nvim-ts-context-commentstring" },
 		{ "mfussenegger/nvim-treehopper" },

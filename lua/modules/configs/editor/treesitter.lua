@@ -20,6 +20,7 @@ return vim.schedule_wrap(function()
 			"make",
 			"markdown",
 			"markdown_inline",
+			"swift",
 			"python",
 			"rust",
 			"typescript",
